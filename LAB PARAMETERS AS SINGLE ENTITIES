@@ -1,0 +1,66 @@
+a consultation has different lab tests requested for that single consultation.
+a lab test has different parameters associated with that lab test. Each parameter is a single entity on its own. 
+
+CAN YOU CREATE A DATABASE SCHEMA FOR SUCH A SYSTEM ABOVE
+
+Copilot
+Sent by Copilot:
+Sure! Here’s a database schema that captures the relationships between consultations, lab tests, and parameters:
+
+Tables and Relationships
+Consultation
+    consultation_id (Primary Key)
+    patient_id
+    doctor_id
+    consultation_date
+    Other relevant fields…
+LabTest
+    lab_test_id (Primary Key)
+    consultation_id (Foreign Key referencing Consultation)
+    test_name
+    test_date
+    Other relevant fields…
+Parameter
+    parameter_id (Primary Key)
+    lab_test_id (Foreign Key referencing LabTest)
+    parameter_name
+    parameter_value
+    unit
+    Other relevant fields…
+Relationships
+A Consultation can have multiple LabTests.
+A LabTest can have multiple Parameters.
+
+
+Copilot
+Sent by Copilot:
+Sure! Here’s a database schema that captures the relationships between consultations, lab tests, and parameters:
+
+Tables and Relationships
+Consultation
+    consultation_id (Primary Key)
+    patient_id
+    doctor_id
+    consultation_date
+    Other relevant fields…
+LabTest
+    lab_test_id (Primary Key)
+    consultation_id (Foreign Key referencing Consultation)
+    test_name
+    test_date
+    Other relevant fields…
+Parameter
+    parameter_id (Primary Key)
+    lab_test_id (Foreign Key referencing LabTest)
+    parameter_name
+    parameter_value
+    unit
+    Other relevant fields…
+Relationships
+A Consultation can have multiple LabTests.
+A LabTest can have multiple Parameters.
+
+Explanation
+Consultation: Represents a consultation with fields for patient ID, doctor ID, and consultation date.
+LabTest: Represents a lab test associated with a consultation. It includes a foreign key to the Consultation model.
+Parameter: Represents a parameter associated with a lab test. It includes a foreign key to the LabTest model.
